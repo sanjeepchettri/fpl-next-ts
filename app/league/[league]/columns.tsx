@@ -10,6 +10,10 @@ export type PlayerDetails = {
   event_transfer_cost: number;
   player_total: number;
 };
+import {
+    CaretSortIcon
+}
+from "@radix-ui/react-icons"
 
 export const columns: ColumnDef<PlayerDetails>[] = [
   {
@@ -27,20 +31,20 @@ export const columns: ColumnDef<PlayerDetails>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
-          Gameweek Score
+          Gameweek Score <CaretSortIcon className="ml-2 h-4 w-4" />
         </Button>
       );
     },
   },
 
   {
-    accessorKey: "event_transfer_cost",
+    accessorKey: "event_transfers_cost",
     header: ({ column }) => {
       return (
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
-          Points Deducted
+          Points Deducted <CaretSortIcon className="ml-2 h-4 w-4" />
         </Button>
       );
     },
@@ -52,7 +56,7 @@ export const columns: ColumnDef<PlayerDetails>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
-          Player Total
+          Player Total <CaretSortIcon className="ml-2 h-4 w-4" />
         </Button>
       );
     },

@@ -17,10 +17,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 import { useEffect, useState } from "react";
-
 
 interface LeagueDataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -91,16 +90,15 @@ const LeagueDataTable = <TData, TValue>({
           variant="outline"
           size="sm"
           onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
+          disabled={!table.getCanPreviousPage()}>
           Previous
         </Button>
         <Button
           variant="outline"
+          className="font-black"
           size="sm"
           onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
+          disabled={!table.getCanNextPage()}>
           Next
         </Button>
       </div>
